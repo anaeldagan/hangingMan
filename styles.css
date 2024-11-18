@@ -1,0 +1,134 @@
+body {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: pink;
+
+}
+.container {
+    width: 850px;
+    background-color: rgb(239, 223, 232);
+    display: flex;
+    align-items: flex-end;
+    gap: 70px;
+    padding: 60px 40px;
+    border-radius: 10px;
+}
+.hangman-box img{
+    max-width: 270px;
+}
+.hangman-box h1 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.word-display {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+.word-display .letter {
+    width: 28px;
+    margin-bottom: 40px;
+    border-bottom: 3px solid black;
+}
+.word-display .letter.guessed {
+    border-color: transparent;
+    margin: -40px 0 35px;
+}
+.game-box h4 {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.game-box h4 b {
+    font-weight: 600;
+}
+.game-box .guesses-text b {
+    color: red
+}
+.game-box .keyboard {
+    display: flex;
+    gap: 5px;
+    margin-top:  40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+:where(.game-modal, .keyboard) button {
+    color: plum;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: brown;
+}
+.keyboard button {
+    padding: 7px;
+    width: calc(100% / 9 -5px);
+}
+.keyboard button:hover {
+    background: black;
+}
+.game-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.game-modal .content {
+    background: white;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+} 
+.game-modal img {
+    max-width: 130px;
+    margin-bottom: 20px;
+}
+.game-modal h4 {
+    font-size: 1.5rem;
+}
+.game-modal p {
+    font-size: 1.14rem;
+    margin: 15px 0 30px;
+    font-weight: 500;
+}
+.content button:hover {
+    background: black;
+}
+.game-modal p b {
+    color: rgb(203, 36, 200);
+    font-weight: 600;
+}
+.hangman-box button{
+    padding: 15px;
+}
+
+@media (max-width : 782px) {
+    .container {
+        flex-direction: column;
+        padding: 30px 15px;
+        align-items: center;
+    }
+    .hangman-box img {
+        max-width: 200px;
+    }
+    .hangman-box h1 {
+        display: none;
+    }
+}
