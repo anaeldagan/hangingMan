@@ -33,8 +33,9 @@ body {
     justify-content: center;
 }
 .word-display .letter {
-    width: 28px;
+    width: 50px;
     margin-bottom: 40px;
+    font-size: 2.3rem; 
     border-bottom: 3px solid black;
 }
 .word-display .letter.guessed {
@@ -43,7 +44,7 @@ body {
 }
 .game-box h4 {
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     margin-bottom: 15px;
 }
@@ -62,7 +63,7 @@ body {
 }
 :where(.game-modal, .keyboard) button {
     color: plum;
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: 500;
     cursor: pointer;
     border: none;
@@ -74,6 +75,13 @@ body {
     padding: 7px;
     width: calc(100% / 9 -5px);
 }
+.keyboard button[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+}
+:where(.game-modal, .keyboard) button:hover {
+    background: palevioletred;
+}
 .keyboard button:hover {
     background: black;
 }
@@ -83,11 +91,21 @@ body {
     top: 0;
     height: 100%;
     width: 100%;
-    display: none;
+    opacity: 0;
+    padding: 0 10px;
+    pointer-events: none;
+    z-index: 999;
+    display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.6);
+    transition: opacity 0.4 ease;
 }
+.game-modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 .game-modal .content {
     background: white;
     max-width: 420px;
